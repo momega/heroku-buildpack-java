@@ -37,7 +37,7 @@ if [ ! -d .maven ]; then
   echo " done"
 fi
 
-MAVEN_SETTINGS_URL="http://s3.amazonaws.com/heroku-jvm-langpack-java/settings.xml"
+[ -z $MAVEN_SETTINGS_URL ] && MAVEN_SETTINGS_URL="http://s3.amazonaws.com/heroku-jvm-langpack-java/settings.xml"
 
 echo -n "-----> Installing settings.xml..."
 if [ -f .m2/settings.xml ]; then
